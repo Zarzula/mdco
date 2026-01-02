@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Sparkles } from "lucide-react";
+import { Trophy } from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -7,10 +7,10 @@ const Navbar = () => {
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         <a href="/" className="flex items-center gap-2">
           <div className="w-8 h-8 bg-gradient-warm rounded-lg flex items-center justify-center">
-            <Sparkles className="w-4 h-4 text-primary-foreground" />
+            <Trophy className="w-4 h-4 text-primary-foreground" />
           </div>
           <span className="font-display text-xl font-bold text-foreground">
-            Curiosa
+            Maratón
           </span>
         </a>
         
@@ -18,11 +18,11 @@ const Navbar = () => {
           <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Características
           </a>
-          <a href="#topics" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Temas
+          <a href="#placeres" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Placeres
           </a>
-          <a href="#community" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Comunidad
+          <a href="#precios" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Precios
           </a>
         </div>
         
