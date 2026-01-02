@@ -19,12 +19,12 @@ const CTA = () => {
             </div>
             
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-              Empieza a aprender hoy
+              Comienza tu maratón hoy
             </h2>
             
             <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto">
-              Únete a miles de curiosos que ya están descubriendo algo nuevo cada día. 
-              Tu próximo tema favorito te está esperando.
+              Únete a la comunidad de apasionados del conocimiento. 
+              Cápsulas diarias, debates y una enciclopedia completa te esperan.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -35,10 +35,17 @@ const CTA = () => {
                 Descargar Gratis
                 <ArrowRight className="w-5 h-5" />
               </Button>
+              <Button 
+                size="xl" 
+                variant="outline"
+                className="border-white/30 text-primary-foreground hover:bg-white/10"
+              >
+                Ver Premium - $9.99/mes
+              </Button>
             </div>
             
             <p className="text-sm text-primary-foreground/60 mt-6">
-              Sin compromisos. Cancela cuando quieras.
+              Plan Free disponible. Premium sin anuncios y con todas las funciones.
             </p>
           </div>
         </div>

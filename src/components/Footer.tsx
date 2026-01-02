@@ -1,4 +1,4 @@
-import { Sparkles } from "lucide-react";
+import { Trophy } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -8,15 +8,15 @@ const Footer = () => {
           <div className="md:col-span-2">
             <a href="/" className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-gradient-warm rounded-lg flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-primary-foreground" />
+                <Trophy className="w-4 h-4 text-primary-foreground" />
               </div>
               <span className="font-display text-xl font-bold text-primary-foreground">
-                Curiosa
+                Maratón de Conocimiento
               </span>
             </a>
             <p className="text-primary-foreground/60 max-w-sm leading-relaxed">
-              Microaprendizaje diario sobre los temas que te apasionan. 
-              Conecta con una comunidad de mentes curiosas.
+              Aprende sobre diversos temas de manera entretenida y conecta con otros 
+              apasionados a través de debates y comunidades.
             </p>
           </div>
           
@@ -25,10 +25,10 @@ const Footer = () => {
               Producto
             </h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors text-sm">Características</a></li>
-              <li><a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors text-sm">Temas</a></li>
-              <li><a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors text-sm">Precios</a></li>
-              <li><a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors text-sm">Para empresas</a></li>
+              <li><a href="#features" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors text-sm">Características</a></li>
+              <li><a href="#placeres" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors text-sm">Placeres</a></li>
+              <li><a href="#precios" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors text-sm">Precios</a></li>
+              <li><a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors text-sm">Enciclopedia</a></li>
             </ul>
           </div>
           
@@ -47,7 +47,7 @@ const Footer = () => {
         
         <div className="pt-8 border-t border-primary-foreground/10 text-center">
           <p className="text-primary-foreground/40 text-sm">
-            © 2025 Curiosa. Todos los derechos reservados.
+            © 2025 Maratón de Conocimiento. Todos los derechos reservados.
           </p>
         </div>
       </div>
