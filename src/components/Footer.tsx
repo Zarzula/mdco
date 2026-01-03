@@ -1,4 +1,4 @@
-import { Trophy } from "lucide-react";
+import logo from "@/assets/maraton-logo.png";
 
 const Footer = () => {
   return (
@@ -7,12 +7,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
             <a href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-warm rounded-lg flex items-center justify-center">
-                <Trophy className="w-4 h-4 text-primary-foreground" />
-              </div>
-              <span className="font-display text-xl font-bold text-primary-foreground">
-                Maratón de Conocimiento
-              </span>
+              <img src={logo} alt="Maratón de Conocimiento" className="h-12 w-auto" />
             </a>
             <p className="text-primary-foreground/60 max-w-sm leading-relaxed">
               Aprende sobre diversos temas de manera entretenida y conecta con otros 
