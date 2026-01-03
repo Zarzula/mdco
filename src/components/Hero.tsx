@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Trophy } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import appMockup from "@/assets/app-mockup.png";
+import logo from "@/assets/maraton-logo.png";
 
 const Hero = () => {
   return (
@@ -14,7 +15,7 @@ const Hero = () => {
           {/* Content */}
           <div className="space-y-8 animate-fade-up">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-card rounded-full shadow-soft">
-              <Trophy className="w-4 h-4 text-primary" />
+              <img src={logo} alt="Logo" className="w-6 h-6" />
               <span className="text-sm font-medium text-muted-foreground">
                 Cápsulas de conocimiento diario
               </span>
