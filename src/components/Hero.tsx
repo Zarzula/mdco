@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import appMockup from "@/assets/app-mockup.png";
 import logo from "@/assets/maraton-logo.png";
+import appDemo from "@/assets/app-demo.mp4";
 
 const Hero = () => {
   return (
@@ -30,6 +31,18 @@ const Hero = () => {
               Aprende sobre tus pasiones cada día y conecta con comunidades de apasionados. 
               Enciclopedia, debates, cápsulas diarias y mucho más en una sola app.
             </p>
+
+            {/* Video Demo */}
+            <div className="relative max-w-xl rounded-2xl overflow-hidden shadow-2xl">
+              <video 
+                src={appDemo}
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="w-full h-auto rounded-2xl"
+              />
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button variant="hero" size="xl">
