@@ -1,3 +1,4 @@
+import { MessageSquarePlus } from "lucide-react";
 import placerCafe from "@/assets/placer-cafe.jpg";
 import placerVino from "@/assets/placer-vino.jpg";
 import placerAstronomia from "@/assets/placer-astronomia.jpg";
@@ -40,6 +41,69 @@ const placeres = [
     members: "6.8K",
     articles: 98,
   },
+  {
+    title: "Destilados y Coctelería",
+    description: "Whisky, ron, gin, vodka y el arte de la mixología. Cócteles clásicos y modernos.",
+    image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=80",
+    members: "9.1K",
+    articles: 134,
+  },
+  {
+    title: "Quesos del Mundo",
+    description: "Tipos, maduración, maridaje y la ciencia detrás de cada queso artesanal.",
+    image: "https://images.unsplash.com/photo-1452195100486-9cc805987862?w=600&q=80",
+    members: "5.4K",
+    articles: 87,
+  },
+  {
+    title: "Cultura del Té",
+    description: "Variedades, ceremonias, preparación y la filosofía detrás de cada infusión.",
+    image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&q=80",
+    members: "7.2K",
+    articles: 112,
+  },
+  {
+    title: "Cerveza Artesanal",
+    description: "Estilos, lúpulos, maltas y el arte del brewing. De la cebada al vaso.",
+    image: "https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=600&q=80",
+    members: "11.3K",
+    articles: 145,
+  },
+  {
+    title: "Música y Audio",
+    description: "Teoría musical, géneros, producción, hi-fi y la ciencia del sonido.",
+    image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=600&q=80",
+    members: "14.7K",
+    articles: 189,
+  },
+  {
+    title: "Fotografía",
+    description: "Técnica, composición, edición y el arte de capturar momentos únicos.",
+    image: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=600&q=80",
+    members: "18.9K",
+    articles: 234,
+  },
+  {
+    title: "Relojería",
+    description: "Mecanismos, historia, coleccionismo y el arte de medir el tiempo.",
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80",
+    members: "4.6K",
+    articles: 76,
+  },
+  {
+    title: "Perfumería",
+    description: "Notas olfativas, familias, creación y el arte de los aromas.",
+    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&q=80",
+    members: "6.1K",
+    articles: 94,
+  },
+  {
+    title: "Arquitectura",
+    description: "Estilos, estructuras, grandes obras y la historia de los espacios.",
+    image: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=600&q=80",
+    members: "10.8K",
+    articles: 167,
+  },
 ];
 
 const Topics = () => {
@@ -57,12 +121,10 @@ const Topics = () => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {placeres.map((placer, index) => (
+          {placeres.map((placer) => (
             <div 
               key={placer.title}
-              className={`group relative overflow-hidden rounded-3xl bg-card shadow-soft hover:shadow-elevated transition-all duration-500 ${
-                index >= 3 ? 'lg:col-span-1' : ''
-              }`}
+              className="group relative overflow-hidden rounded-3xl bg-card shadow-soft hover:shadow-elevated transition-all duration-500 cursor-pointer"
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img 
@@ -90,18 +152,35 @@ const Topics = () => {
               </div>
             </div>
           ))}
+          
+          {/* Tarjeta: Sugerir nuevo tema */}
+          <div 
+            className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-dashed border-primary/30 hover:border-primary/60 shadow-soft hover:shadow-elevated transition-all duration-500 cursor-pointer flex items-center justify-center"
+          >
+            <div className="aspect-[4/3] flex flex-col items-center justify-center p-6 text-center">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <MessageSquarePlus className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-display text-xl font-bold text-foreground mb-2">
+                ¿Tienes una pasión?
+              </h3>
+              <p className="text-muted-foreground text-sm mb-4">
+                Sugiere un nuevo Placer y ayúdanos a crecer la comunidad.
+              </p>
+              <span className="inline-flex items-center gap-2 text-primary font-medium text-sm group-hover:underline underline-offset-4">
+                Sugerir tema
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </span>
+            </div>
+          </div>
         </div>
         
         <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">
-            Y muchos más: Destilados, Quesos, Té, Cerveza Artesanal, Fotografía, Relojería, Perfumería...
+          <p className="text-muted-foreground">
+            <span className="font-semibold text-foreground">14 Placeres</span> disponibles y creciendo cada mes
           </p>
-          <button className="inline-flex items-center gap-2 text-primary font-medium hover:underline underline-offset-4 transition-all">
-            Ver todos los Placeres
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </button>
         </div>
       </div>
     </section>
