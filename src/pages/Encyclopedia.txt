@@ -69,7 +69,6 @@ const Encyclopedia = () => {
       
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-6">
-          {/* Header */}
           <div className="mb-12">
             <Link 
               to="/" 
@@ -89,7 +88,6 @@ const Encyclopedia = () => {
             </p>
           </div>
 
-          {/* Grid de categorías */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {categorias.map((categoria) => (
               <div
@@ -117,7 +115,6 @@ const Encyclopedia = () => {
             ))}
           </div>
 
-          {/* Estadísticas */}
           <div className="mt-16 p-8 bg-muted/30 rounded-3xl">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
