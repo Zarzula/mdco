@@ -107,6 +107,10 @@ const placeres = [
 ];
 
 const Topics = () => {
+  const handleSuggestTopic = () => {
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLScIY7PdmDJSxRs15FTWuLxNbyD_u2ybiuwQr55O_4dpGueqxg/viewform', '_blank');
+  };
+
   return (
     <section id="placeres" className="py-24 bg-muted/30">
       <div className="container mx-auto px-6">
@@ -155,6 +159,7 @@ const Topics = () => {
           
           {/* Tarjeta: Sugerir nuevo tema */}
           <div 
+            onClick={handleSuggestTopic}
             className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-dashed border-primary/30 hover:border-primary/60 shadow-soft hover:shadow-elevated transition-all duration-500 cursor-pointer flex items-center justify-center"
           >
             <div className="aspect-[4/3] flex flex-col items-center justify-center p-6 text-center">
