@@ -46,6 +46,10 @@ const plans = [
 ];
 
 const Pricing = () => {
+  const handleBuyBook = () => {
+    window.open('https://pay.hotmart.com/Y103666198P', '_blank');
+  };
+
   return (
     <section id="pricing" className="py-24 bg-muted/30">
       <div className="container mx-auto px-6">
@@ -132,7 +136,7 @@ const Pricing = () => {
           <div className="relative rounded-3xl p-8 bg-gradient-to-br from-purple-600 via-indigo-600 to-purple-700 text-white shadow-elevated">
             <div className="absolute -top-4 left-1/2 -translate-x-1/2">
               <span className="bg-yellow-400 text-yellow-900 px-4 py-1 rounded-full text-sm font-bold shadow-md">
-                🔥 70% OFF
+                🔥 80% OFF
               </span>
             </div>
 
@@ -148,10 +152,10 @@ const Pricing = () => {
               </h3>
               <div className="flex items-baseline gap-3">
                 <span className="font-display text-4xl font-bold text-yellow-300">
-                  $3
+                  $4.50
                 </span>
                 <span className="text-lg text-white/50 line-through">
-                  $10
+                  $22
                 </span>
                 <span className="text-white/70 text-sm">
                   pago único
@@ -189,7 +193,10 @@ const Pricing = () => {
               </li>
             </ul>
 
-            <button className="w-full py-3 rounded-full font-medium bg-yellow-400 text-yellow-900 hover:bg-yellow-300 transition-all duration-300 flex items-center justify-center gap-2">
+            <button 
+              onClick={handleBuyBook}
+              className="w-full py-3 rounded-full font-medium bg-yellow-400 text-yellow-900 hover:bg-yellow-300 transition-all duration-300 flex items-center justify-center gap-2"
+            >
               <BookOpen className="w-5 h-5" />
               Obtener Cuaderno
             </button>
