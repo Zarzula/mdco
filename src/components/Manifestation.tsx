@@ -1,9 +1,9 @@
 import { Sparkles, BookOpen, Download } from "lucide-react";
 
 const Manifestation = () => {
-  const handleDownload = () => {
-    window.open('https://pay.hotmart.com/Y103666', '_blank');
-  };
+ const handleDownload = () => {
+  window.open('https://pay.hotmart.com/Y103666198P', '_blank');
+};
 
   return (
     <section className="py-20 bg-gradient-to-b from-background to-muted/30">
