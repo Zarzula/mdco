@@ -1,10 +1,12 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import appMockup from "@/assets/app-mockup.png";
+import { ArrowRight, Volume2, VolumeX } from "lucide-react";
 import logo from "@/assets/maraton-logo.png";
 import appDemo from "@/assets/app-demo.mp4";
 
 const Hero = () => {
+  const [isMuted, setIsMuted] = useState(true);
+
   return (
     <section className="relative min-h-screen bg-gradient-hero overflow-hidden">
       {/* Decorative elements */}
@@ -26,23 +28,16 @@ const Hero = () => {
               Maratón de{" "}
               <span className="text-gradient-warm">Conocimiento</span>
             </h1>
+
+            {/* Subtítulo */}
+            <h2 className="font-display text-2xl md:text-3xl font-semibold text-primary">
+              Aprende, Conecta y Crece
+            </h2>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed font-body">
               Aprende sobre tus pasiones cada día y conecta con comunidades de apasionados. 
               Enciclopedia, debates, cápsulas diarias y mucho más en una sola app.
             </p>
-
-            {/* Video Demo */}
-            <div className="relative max-w-xl rounded-2xl overflow-hidden shadow-2xl">
-              <video 
-                src={appDemo}
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-                className="w-full h-auto rounded-2xl"
-              />
-            </div>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button variant="hero" size="xl">
@@ -72,15 +67,25 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* App Mockup */}
+          {/* Video Demo con botón de sonido */}
           <div className="relative flex justify-center lg:justify-end">
-            <div className="relative animate-float">
+            <div className="relative">
               <div className="absolute inset-0 bg-gradient-warm rounded-3xl blur-3xl opacity-20 scale-90" />
-              <img 
-                src={appMockup} 
-                alt="Maratón de Conocimiento App" 
-                className="relative w-full max-w-md drop-shadow-2xl"
+              <video 
+                src={appDemo}
+                autoPlay 
+                loop 
+                muted={isMuted}
+                playsInline
+                className="relative w-full max-w-lg rounded-2xl drop-shadow-2xl"
               />
+              {/* Botón de sonido */}
+              <button 
+                onClick={() => setIsMuted(!isMuted)}
+                className="absolute bottom-4 right-4 p-3 bg-black/50 rounded-full text-white hover:bg-black/70 transition-colors"
+              >
+                {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
+              </button>
             </div>
           </div>
         </div>
