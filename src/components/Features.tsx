@@ -18,19 +18,19 @@ const features = [
     icon: Lightbulb,
     title: "Cápsulas Diarias",
     description: "Datos curiosos breves cada día. Aprende algo nuevo en solo minutos de forma entretenida.",
-    scrollTo: null,
+    link: "/capsulas",
   },
   {
     icon: MessageSquare,
     title: "Debates",
     description: "Participa en discusiones tipo VS, opinión o ranking con otros apasionados de tu tema.",
-    scrollTo: null,
+    link: null,
   },
   {
     icon: Trophy,
     title: "Sistema de Niveles",
     description: "Gana puntos, sube de nivel y obtén insignias mientras aprendes. De Novato a Maestro.",
-    scrollTo: null,
+    link: "/niveles",
   },
 ];
 
