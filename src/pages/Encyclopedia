@@ -1,0 +1,149 @@
+import { Link } from "react-router-dom";
+import { ArrowLeft, Atom, Calculator, Cog, Users, BookOpen, Sparkles, Brain, Scale } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+const categorias = [
+  {
+    icon: Atom,
+    title: "Ciencias Naturales",
+    description: "Astronomía, Física, Química, Biología, Geología y Fenómenos Naturales.",
+    temas: 156,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    icon: Calculator,
+    title: "Ciencias Formales",
+    description: "Matemáticas, Lógica, Computación y Metodología de Investigación.",
+    temas: 89,
+    color: "from-purple-500 to-pink-500",
+  },
+  {
+    icon: Cog,
+    title: "Ciencias Aplicadas",
+    description: "Ingenierías, Ciencias de la Salud, Tecnología y Comunicación.",
+    temas: 124,
+    color: "from-orange-500 to-red-500",
+  },
+  {
+    icon: Users,
+    title: "Ciencias Sociales",
+    description: "Antropología, Economía, Derecho, Política, Sociología y Geopolítica.",
+    temas: 178,
+    color: "from-green-500 to-emerald-500",
+  },
+  {
+    icon: BookOpen,
+    title: "Humanidades",
+    description: "Arte, Filosofía, Religión, Literatura, Música e Historia.",
+    temas: 203,
+    color: "from-amber-500 to-yellow-500",
+  },
+  {
+    icon: Sparkles,
+    title: "Gran Historia (Big History)",
+    description: "Del Big Bang a las civilizaciones. El relato completo del cosmos y la humanidad.",
+    temas: 45,
+    color: "from-indigo-500 to-violet-500",
+  },
+  {
+    icon: Brain,
+    title: "Mente y Aprendizaje",
+    description: "Neurociencia, metacognición, tipos de inteligencia y técnicas de estudio.",
+    temas: 67,
+    color: "from-rose-500 to-pink-500",
+  },
+  {
+    icon: Scale,
+    title: "Pensamiento Crítico",
+    description: "Pseudociencias, conspiraciones, sesgos cognitivos y falacias lógicas.",
+    temas: 52,
+    color: "from-slate-500 to-gray-500",
+  },
+];
+
+const Encyclopedia = () => {
+  return (
+    <div className="min-h-screen bg-background font-body">
+      <Navbar />
+      
+      <main className="pt-24 pb-16">
+        <div className="container mx-auto px-6">
+          {/* Header */}
+          <div className="mb-12">
+            <Link 
+              to="/" 
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-6"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Volver al inicio
+            </Link>
+            
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Enciclopedia del{" "}
+              <span className="text-gradient-warm">Conocimiento</span>
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              Conocimiento organizado por categorías científicas y humanísticas. 
+              Explora desde el origen del universo hasta las complejidades de la mente humana.
+            </p>
+          </div>
+
+          {/* Grid de categorías */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {categorias.map((categoria) => (
+              <div
+                key={categoria.title}
+                className="group p-6 bg-card rounded-2xl shadow-soft hover:shadow-elevated transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+              >
+                <div className={`w-14 h-14 bg-gradient-to-br ${categoria.color} rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
+                  <categoria.icon className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+                  {categoria.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                  {categoria.description}
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-primary font-medium">
+                    {categoria.temas} temas
+                  </span>
+                  <span className="text-primary group-hover:translate-x-1 transition-transform">
+                    →
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Estadísticas */}
+          <div className="mt-16 p-8 bg-muted/30 rounded-3xl">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              <div>
+                <p className="font-display text-4xl font-bold text-foreground">914</p>
+                <p className="text-muted-foreground">Temas totales</p>
+              </div>
+              <div>
+                <p className="font-display text-4xl font-bold text-foreground">8</p>
+                <p className="text-muted-foreground">Categorías</p>
+              </div>
+              <div>
+                <p className="font-display text-4xl font-bold text-foreground">50+</p>
+                <p className="text-muted-foreground">Subcategorías</p>
+              </div>
+              <div>
+                <p className="font-display text-4xl font-bold text-foreground">∞</p>
+                <p className="text-muted-foreground">Por aprender</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Encyclopedia;
