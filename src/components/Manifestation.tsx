@@ -2,14 +2,7 @@ import { Sparkles, BookOpen, Download } from "lucide-react";
 
 const Manifestation = () => {
   const handleDownload = () => {
-    // Opción 1: PDF en tu proyecto (public/cuaderno-manifestacion.pdf)
-    window.open('/cuaderno-manifestacion.pdf', '_blank');
-    
-    // Opción 2: Link externo (Google Drive, Dropbox, etc.)
-    // window.open('https://drive.google.com/file/d/TU_ID/view', '_blank');
-    
-    // Opción 3: Link de pago (Gumroad, PayPal, etc.)
-    // window.open('https://tuusuario.gumroad.com/l/cuaderno', '_blank');
+    window.open('https://pay.hotmart.com/Y103666', '_blank');
   };
 
   return (
@@ -32,7 +25,7 @@ const Manifestation = () => {
             {/* Badge de descuento */}
             <div className="absolute top-4 right-4">
               <span className="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-bold shadow-md">
-                🔥 70% OFF
+                🔥 80% OFF
               </span>
             </div>
 
@@ -86,10 +79,10 @@ const Manifestation = () => {
                 <div className="flex flex-col sm:flex-row items-center gap-4">
                   <div className="flex items-baseline gap-3">
                     <span className="font-display text-4xl font-bold text-yellow-300">
-                      $3
+                      $4.50
                     </span>
                     <span className="text-xl text-white/50 line-through">
-                      $10
+                      $22
                     </span>
                     <span className="text-white/60 text-sm">
                       USD
