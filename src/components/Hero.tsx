@@ -39,24 +39,19 @@ const Hero = () => {
               Enciclopedia, debates, cápsulas diarias y mucho más en una sola app.
             </p>
             
+            {/* Botones - CORREGIDO */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button variant="hero" size="xl">
                 Descargar Gratis
                 <ArrowRight className="w-5 h-5" />
               </Button>
-             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-  <Button variant="hero" size="xl">
-    Descargar Gratis
-    <ArrowRight className="w-5 h-5" />
-  </Button>
-  <Button 
-    variant="heroOutline" 
-    size="xl"
-    onClick={() => document.getElementById('placeres')?.scrollIntoView({ behavior: 'smooth' })}
-  >
-    Explorar Placeres
-  </Button>
-</div>
+              <Button 
+                variant="heroOutline" 
+                size="xl"
+                onClick={() => document.getElementById('placeres')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Explorar Placeres
+              </Button>
             </div>
             
             <div className="flex items-center gap-8 pt-6">
