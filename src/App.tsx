@@ -8,6 +8,8 @@ import Encyclopedia from "./pages/Encyclopedia";
 import Capsulas from "./pages/Capsulas";
 import Niveles from "./pages/Niveles";
 import NotFound from "./pages/NotFound";
+import Manifiesto from "./pages/Manifiesto";
+import TratoJusto from "./pages/TratoJusto";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +24,8 @@ const App = () => (
           <Route path="/enciclopedia" element={<Encyclopedia />} />
           <Route path="/capsulas" element={<Capsulas />} />
           <Route path="/niveles" element={<Niveles />} />
+          <Route path="/manifiesto" element={<Manifiesto />} />
+          <Route path="/trato-justo" element={<TratoJusto />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
