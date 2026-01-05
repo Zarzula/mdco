@@ -155,7 +155,7 @@ const TratoJusto = () => {
               <p className="text-primary-foreground/80 mb-6">
                 Escríbenos y te respondemos como humanos.
               </p>
-              
+              <a
                 href="mailto:mdco.ocean@gmail.com"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium hover:bg-primary/90 transition-colors"
               >
