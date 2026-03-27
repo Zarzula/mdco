@@ -156,7 +156,7 @@ const PlacerDetail = () => {
                     </div>
                     <div className="bg-muted/50 rounded-xl p-6 text-center">
                       <p className="text-muted-foreground mb-2">¿Conoces más sobre este tema? ¡Comparte tu experiencia!</p>
-                      <p className="text-sm text-muted-foreground">Los comentarios estarán disponibles próximamente.</p>
+                      <p className="text-sm text-muted-foreground">Regístrate gratis para dejar comentarios y participar en la comunidad.</p>
                     </div>
                   </div>
                 </div>
@@ -214,7 +214,7 @@ const PlacerDetail = () => {
               ))}
 
               <div className="bg-muted/50 rounded-xl p-6 text-center">
-                <p className="text-muted-foreground text-sm">La participación en debates estará disponible próximamente.</p>
+                <p className="text-muted-foreground text-sm font-medium">Puedes leer todos los debates libremente. Regístrate gratis para participar y dar tu opinión.</p>
               </div>
             </div>
           )}
@@ -259,7 +259,7 @@ const PlacerDetail = () => {
               ))}
 
               <div className="bg-muted/50 rounded-xl p-6 text-center">
-                <p className="text-muted-foreground text-sm">Las votaciones estarán disponibles próximamente.</p>
+                <p className="text-muted-foreground text-sm font-medium">Puedes ver los resultados libremente. Regístrate gratis para votar en las encuestas.</p>
               </div>
             </div>
           )}

@@ -7,6 +7,7 @@ import Manifestation from "@/components/Manifestation";
 import Topics from "@/components/Topics";
 import Pricing from "@/components/Pricing";
 import Footer from "@/components/Footer";
+import DailyWords from "@/components/DailyWords";
 
 const Index = () => {
   const { hash } = useLocation();
@@ -31,6 +32,7 @@ const Index = () => {
       <Topics />
       <Pricing />
       <Footer />
+      <DailyWords />
     </div>
   );
 };
