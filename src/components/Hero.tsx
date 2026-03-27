@@ -36,13 +36,17 @@ const Hero = () => {
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed font-body">
               Aprende sobre tus pasiones cada día y conecta con comunidades de apasionados. 
-              Enciclopedia, debates, cápsulas diarias y mucho más en una sola app.
+              Enciclopedia, debates, cápsulas diarias y mucho más en una sola plataforma.
             </p>
             
             {/* Botones - CORREGIDO */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button variant="hero" size="xl">
-                Descargar Gratis
+              <Button
+                variant="hero"
+                size="xl"
+                onClick={() => document.getElementById('placeres')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Explorar Ahora
                 <ArrowRight className="w-5 h-5" />
               </Button>
               <Button 

@@ -22,8 +22,8 @@ const Navbar = () => {
           </Link>
         </div>
         
-        <Button variant="hero" size="default">
-          Descargar App
+        <Button variant="hero" size="default" className="opacity-80 cursor-default" disabled>
+          📱 App Próximamente
         </Button>
       </div>
     </nav>

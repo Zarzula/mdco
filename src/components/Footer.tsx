@@ -52,7 +52,7 @@ const Footer = () => {
         
         <div className="pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-primary-foreground/40 text-sm">
-            © 2025 Maratón de Conocimiento. Todos los derechos reservados.
+            © 2026 Maratón de Conocimiento. Todos los derechos reservados.
           </p>
           <a 
             href="mailto:mdco.ocean@gmail.com" 
