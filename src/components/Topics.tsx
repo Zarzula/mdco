@@ -33,14 +33,14 @@ export const placeres = [
     slug: "astronomia",
     description: "Observación del cielo, equipos, astrofotografía y cosmología para apasionados.",
     image: placerAstronomia,
-    status: "proximamente",
+    status: "activo",
   },
   {
     title: "Chocolate y Cacao",
     slug: "chocolate",
     description: "Del árbol a la barra: bean to bar, orígenes del cacao y el arte del chocolatero.",
     image: placerChocolate,
-    status: "proximamente",
+    status: "activo",
   },
   {
     title: "Destilados y Coctelería",
@@ -208,7 +208,7 @@ const Topics = () => {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground">
-            <span className="font-semibold text-foreground">3 Placeres activos</span> · más comunidades próximamente
+            <span className="font-semibold text-foreground">5 Placeres activos</span> · más comunidades próximamente
           </p>
         </div>
       </div>

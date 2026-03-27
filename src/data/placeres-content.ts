@@ -10,6 +10,29 @@ export interface Article {
   category: string;
 }
 
+export interface Debate {
+  id: string;
+  type: "VS" | "Opinion" | "Ranking" | "Mitos" | "Recomendacion";
+  title: string;
+  description: string;
+  optionA?: string;
+  optionB?: string;
+  votesA?: number;
+  votesB?: number;
+  responses: number;
+  author: string;
+  date: string;
+}
+
+export interface Encuesta {
+  id: string;
+  question: string;
+  options: { text: string; votes: number }[];
+  totalVotes: number;
+  author: string;
+  date: string;
+}
+
 export interface PlacerContent {
   slug: string;
   title: string;
@@ -18,6 +41,8 @@ export interface PlacerContent {
   intro: string;
   curiosity: string;
   articles: Article[];
+  debates: Debate[];
+  encuestas: Encuesta[];
   gallery: { src: string; caption: string; author: string }[];
 }
 
@@ -86,6 +111,16 @@ export const placeresContent: Record<string, PlacerContent> = {
         category: "Artesanía",
       },
     ],
+    debates: [
+      { id: "d-camp-1", type: "VS", title: "Big Ben vs Liberty Bell: ¿cuál es más icónica?", description: "Dos campanas que representan a sus naciones. ¿Cuál tiene más significado histórico?", optionA: "Big Ben", optionB: "Liberty Bell", votesA: 67, votesB: 45, responses: 23, author: "CampaneroMDCO", date: "2026-03-15" },
+      { id: "d-camp-2", type: "Opinion", title: "¿Cuál es la campana más bella que has escuchado?", description: "Comparte tu experiencia personal con el sonido de una campana que te haya emocionado.", responses: 18, author: "SonidoSagrado", date: "2026-03-10" },
+      { id: "d-camp-3", type: "Mitos", title: "¿Es verdad que las campanas se afinan con la forma y no con el material?", description: "Muchos creen que el bronce es lo que da el sonido, pero el perfil geométrico es lo que realmente determina la nota.", responses: 12, author: "FundidorClasico", date: "2026-03-05" },
+      { id: "d-camp-4", type: "Recomendacion", title: "Mejores lugares para escuchar carillones en Europa", description: "Busco recomendaciones de ciudades europeas donde se puedan escuchar carillones en vivo.", responses: 9, author: "ViajeroSonoro", date: "2026-02-28" },
+    ],
+    encuestas: [
+      { id: "e-camp-1", question: "¿Qué aspecto de las campanas te fascina más?", options: [{ text: "Su historia y simbolismo", votes: 45 }, { text: "La acústica y el sonido", votes: 32 }, { text: "El arte de la fundición", votes: 28 }, { text: "Las tradiciones culturales", votes: 38 }], totalVotes: 143, author: "MDCO", date: "2026-03-01" },
+      { id: "e-camp-2", question: "¿Cuál región tiene las campanas más interesantes?", options: [{ text: "Europa (catedrales)", votes: 52 }, { text: "Asia (templos budistas)", votes: 41 }, { text: "América (históricas)", votes: 18 }, { text: "Medio Oriente", votes: 12 }], totalVotes: 123, author: "MDCO", date: "2026-02-15" },
+    ],
     gallery: [
       { src: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=400&q=80", caption: "Big Ben, Londres", author: "Comunidad MDCO" },
       { src: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&q=80", caption: "Templo en Kioto, Japón", author: "Comunidad MDCO" },
@@ -145,6 +180,16 @@ export const placeresContent: Record<string, PlacerContent> = {
         readTime: "5 min",
         category: "Maridaje",
       },
+    ],
+    debates: [
+      { id: "d-vino-1", type: "VS", title: "Cabernet Sauvignon vs Malbec: ¿cuál es mejor?", description: "La eterna batalla entre estas dos cepas tintas. ¿Cuál prefieres y por qué?", optionA: "Cabernet Sauvignon", optionB: "Malbec", votesA: 89, votesB: 102, responses: 45, author: "SommelierMDCO", date: "2026-03-18" },
+      { id: "d-vino-2", type: "Recomendacion", title: "Vino para cena romántica bajo $30", description: "Busco recomendaciones de vinos accesibles pero elegantes para una cena especial.", responses: 34, author: "WineLover23", date: "2026-03-12" },
+      { id: "d-vino-3", type: "Ranking", title: "Top 5 regiones vinícolas del mundo", description: "La comunidad vota: ¿cuáles son las 5 mejores regiones para vino en el mundo?", responses: 56, author: "EnologoMDCO", date: "2026-03-08" },
+      { id: "d-vino-4", type: "Mitos", title: "¿El vino mejora siempre con los años?", description: "Uno de los mitos más extendidos. ¿Realmente todos los vinos mejoran con el tiempo?", responses: 28, author: "VinoVerdad", date: "2026-03-01" },
+    ],
+    encuestas: [
+      { id: "e-vino-1", question: "¿Cuál es tu cepa tinta favorita?", options: [{ text: "Malbec", votes: 78 }, { text: "Cabernet Sauvignon", votes: 65 }, { text: "Pinot Noir", votes: 54 }, { text: "Tempranillo", votes: 32 }], totalVotes: 229, author: "MDCO", date: "2026-03-05" },
+      { id: "e-vino-2", question: "¿Con qué frecuencia tomas vino?", options: [{ text: "Diariamente", votes: 15 }, { text: "Fines de semana", votes: 89 }, { text: "Ocasiones especiales", votes: 67 }, { text: "Rara vez", votes: 34 }], totalVotes: 205, author: "MDCO", date: "2026-02-20" },
     ],
     gallery: [
       { src: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=400&q=80", caption: "Viñedos al atardecer", author: "Comunidad MDCO" },
@@ -206,10 +251,77 @@ export const placeresContent: Record<string, PlacerContent> = {
         category: "Proceso",
       },
     ],
+    debates: [
+      { id: "d-cafe-1", type: "VS", title: "V60 vs AeroPress: ¿cuál método es superior?", description: "Dos métodos de filtrado que los baristas adoran. ¿Cuál produce la mejor taza?", optionA: "V60", optionB: "AeroPress", votesA: 76, votesB: 68, responses: 38, author: "BaristaMDCO", date: "2026-03-20" },
+      { id: "d-cafe-2", type: "Opinion", title: "¿Cuál fue tu mejor descubrimiento en café de especialidad?", description: "Comparte ese momento en que probaste algo que cambió tu percepción del café.", responses: 42, author: "CafeAddict", date: "2026-03-14" },
+      { id: "d-cafe-3", type: "Recomendacion", title: "Mejor molino manual para empezar en casa", description: "Quiero mejorar mi café en casa. ¿Qué molino manual recomiendan con buen presupuesto?", responses: 25, author: "HomeBrewer", date: "2026-03-08" },
+    ],
+    encuestas: [
+      { id: "e-cafe-1", question: "¿Cuál es tu método de preparación favorito?", options: [{ text: "Espresso", votes: 92 }, { text: "V60 / Filtrado", votes: 67 }, { text: "Prensa francesa", votes: 45 }, { text: "AeroPress", votes: 38 }], totalVotes: 242, author: "MDCO", date: "2026-03-10" },
+      { id: "e-cafe-2", question: "¿Origen de café favorito?", options: [{ text: "Colombia", votes: 72 }, { text: "Etiopía", votes: 85 }, { text: "Brasil", votes: 34 }, { text: "Guatemala", votes: 28 }], totalVotes: 219, author: "MDCO", date: "2026-02-25" },
+    ],
     gallery: [
       { src: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=400&q=80", caption: "Granos recién tostados", author: "Comunidad MDCO" },
       { src: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400&q=80", caption: "Preparación en V60", author: "Comunidad MDCO" },
       { src: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80", caption: "Latte art", author: "Comunidad MDCO" },
+    ],
+  },
+
+  astronomia: {
+    slug: "astronomia",
+    title: "Astronomía Amateur",
+    subtitle: "Observación del cielo, equipos, astrofotografía y cosmología para apasionados",
+    heroImage: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200&q=80",
+    intro: "La astronomía amateur es una ventana al universo accesible para todos. No necesitas un telescopio profesional para maravillarte con los anillos de Saturno, las fases de Venus o la danza de las galaxias. En este Placer compartimos conocimientos sobre observación celeste, equipos, astrofotografía y los misterios del cosmos que puedes explorar desde tu propio patio.",
+    curiosity: "La luz que ves de la estrella más cercana al Sol, Próxima Centauri, salió de ella hace 4.24 años. Cuando miras el cielo, literalmente estás viendo el pasado.",
+    articles: [
+      { id: "astro-1", title: "Guía para principiantes: tu primera noche de observación", excerpt: "Todo lo que necesitas saber para empezar a observar el cielo nocturno, desde cómo encontrar constelaciones hasta qué equipo básico necesitas.", content: "La observación astronómica comienza a simple vista. Primero, busca un lugar con poca contaminación lumínica. Las aplicaciones como Stellarium o Sky Map te ayudan a identificar lo que ves. Empieza reconociendo las constelaciones más fáciles: Orión en invierno con sus tres estrellas del cinturón, la Osa Mayor que apunta a la estrella Polar, y Escorpio en verano con su corazón rojo Antares. Con unos binoculares 10x50 puedes ver los cráteres de la Luna, las lunas de Júpiter y cúmulos estelares como las Pléyades. El siguiente paso es un telescopio: para principiantes se recomienda un reflector Dobsoniano de 150mm que ofrece una excelente relación calidad-precio.", country: "Internacional", countryFlag: "🌍", image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&q=80", readTime: "6 min", category: "Guía" },
+      { id: "astro-2", title: "Los planetas del sistema solar: qué puedes ver con un telescopio casero", excerpt: "Júpiter y sus lunas, los anillos de Saturno, las fases de Venus: el sistema solar desde tu patio.", content: "Con un telescopio modesto puedes ver detalles sorprendentes de nuestros vecinos planetarios. Júpiter revela sus bandas de nubes y hasta cuatro lunas galileanas como puntos brillantes que cambian de posición cada noche. Saturno muestra sus anillos incluso con un telescopio de 60mm, una vista que literalmente quita el aliento la primera vez. Venus exhibe fases como la Luna y Marte muestra su casquete polar cuando está en oposición. Urano y Neptuno son visibles como pequeños discos verdosos y azulados respectivamente. El truco está en la paciencia y conocer los mejores momentos: cuando un planeta está en oposición está más cerca y brillante.", country: "Internacional", countryFlag: "🌍", image: "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=600&q=80", readTime: "7 min", category: "Observación" },
+      { id: "astro-3", title: "Astrofotografía: captura el universo con tu cámara", excerpt: "Desde fotos de la Vía Láctea con un smartphone hasta nebulosas con equipo especializado.", content: "La astrofotografía ha vivido una revolución gracias a las cámaras digitales. Con un smartphone moderno y una exposición larga puedes capturar la Vía Láctea desde un cielo oscuro. La regla del 500 ayuda a evitar trazos estelares: divide 500 entre la distancia focal de tu lente para obtener el tiempo máximo de exposición en segundos. Para ir más allá necesitas una montura ecuatorial motorizada que compense la rotación terrestre. Las cámaras DSLR o mirrorless modificadas para astronomía captan nebulosas y galaxias mediante el apilado de muchas exposiciones. Software como DeepSkyStacker combina docenas de fotos para reducir el ruido y revelar detalles invisibles al ojo humano.", country: "Internacional", countryFlag: "🌍", image: "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=600&q=80", readTime: "8 min", category: "Astrofotografía" },
+      { id: "astro-4", title: "El Big Bang y el origen del universo: lo que sabemos hoy", excerpt: "Desde la singularidad inicial hasta la formación de las primeras estrellas: la historia de los primeros minutos del cosmos.", content: "Hace aproximadamente 13,800 millones de años, todo el universo observable estaba comprimido en un punto de densidad y temperatura infinitas. En las primeras fracciones de segundo tras el Big Bang, el universo se expandió exponencialmente en un proceso llamado inflación cósmica. A los 3 minutos se formaron los primeros núcleos atómicos de hidrógeno y helio. Pasaron 380,000 años hasta que el universo se enfrió lo suficiente para que los electrones se unieran a los núcleos, liberando la luz que hoy detectamos como la radiación cósmica de fondo. Las primeras estrellas se encendieron unos 200 millones de años después, iniciando la era de la luz en el cosmos.", country: "Internacional", countryFlag: "🌍", image: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80", readTime: "6 min", category: "Cosmología" },
+    ],
+    debates: [
+      { id: "d-astro-1", type: "VS", title: "Telescopio reflector vs refractor: ¿cuál para empezar?", description: "El eterno debate entre los dos tipos principales de telescopios para principiantes.", optionA: "Reflector (Newton)", optionB: "Refractor", votesA: 58, votesB: 42, responses: 31, author: "AstroMDCO", date: "2026-03-16" },
+      { id: "d-astro-2", type: "Opinion", title: "¿Cuál fue el objeto celeste que más te impresionó ver por primera vez?", description: "Todos tenemos esa primera vez con el telescopio que nos dejó sin palabras.", responses: 27, author: "StarGazer", date: "2026-03-10" },
+      { id: "d-astro-3", type: "Recomendacion", title: "Mejores apps para identificar estrellas y planetas", description: "Busco recomendaciones de aplicaciones de astronomía para Android e iOS.", responses: 19, author: "CieloNocturno", date: "2026-03-02" },
+    ],
+    encuestas: [
+      { id: "e-astro-1", question: "¿Qué planeta te gustaría visitar si pudieras?", options: [{ text: "Marte", votes: 89 }, { text: "Saturno (sus lunas)", votes: 67 }, { text: "Júpiter (Europa)", votes: 45 }, { text: "Venus", votes: 12 }], totalVotes: 213, author: "MDCO", date: "2026-03-01" },
+      { id: "e-astro-2", question: "¿Cuánto inviertes en tu equipo de astronomía?", options: [{ text: "Solo a simple vista", votes: 34 }, { text: "Binoculares", votes: 45 }, { text: "Telescopio básico", votes: 56 }, { text: "Equipo avanzado", votes: 23 }], totalVotes: 158, author: "MDCO", date: "2026-02-18" },
+    ],
+    gallery: [
+      { src: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=400&q=80", caption: "Vía Láctea desde cielo oscuro", author: "Comunidad MDCO" },
+      { src: "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=400&q=80", caption: "Nebulosa de Orión", author: "Comunidad MDCO" },
+      { src: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=400&q=80", caption: "Galaxia espiral", author: "Comunidad MDCO" },
+    ],
+  },
+
+  chocolate: {
+    slug: "chocolate",
+    title: "Chocolate y Cacao",
+    subtitle: "Del árbol a la barra: bean to bar, orígenes del cacao y el arte del chocolatero",
+    heroImage: "https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=1200&q=80",
+    intro: "El chocolate es uno de los placeres más universales de la humanidad. Desde las civilizaciones mesoamericanas que consideraban al cacao un regalo divino, hasta los maestros chocolateros europeos que refinaron su preparación, el viaje del cacao es una historia de transformación extraordinaria. En este Placer exploraremos desde la botánica del árbol de cacao hasta la ciencia del temperado perfecto.",
+    curiosity: "Los mayas y aztecas usaban los granos de cacao como moneda. Un conejo costaba 10 granos de cacao y un esclavo costaba 100. El emperador Moctezuma bebía 50 tazas de chocolate al día.",
+    articles: [
+      { id: "choco-1", title: "Ecuador: la cuna del cacao fino de aroma", excerpt: "El cacao Nacional de Ecuador, conocido como Arriba, es considerado uno de los más finos del mundo por sus notas florales únicas.", content: "Ecuador produce el 60% del cacao fino de aroma del mundo gracias a su variedad Nacional, también llamada Arriba. Este cacao se distingue por notas florales como jazmín y azahar, combinadas con frutas tropicales y un delicado sabor a nuez. La variedad se originó hace más de 5,000 años en la cuenca amazónica ecuatoriana, lo que la convierte en una de las más antiguas del mundo. Los agricultores ecuatorianos cultivan el cacao bajo sombra en sistemas agroforestales tradicionales que preservan la biodiversidad. Las provincias de Los Ríos, Guayas y Esmeraldas son las principales productoras. En los últimos años, chocolateros ecuatorianos como Pacari y República del Cacao han puesto al país en el mapa de la chocolatería mundial.", country: "Ecuador", countryFlag: "🇪🇨", image: "https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=600&q=80", readTime: "6 min", category: "Orígenes" },
+      { id: "choco-2", title: "Bean to bar: el movimiento que revolucionó el chocolate", excerpt: "Pequeños productores que controlan todo el proceso, desde el grano de cacao hasta la tableta final.", content: "El movimiento bean to bar surgió a principios de los 2000 como respuesta al chocolate industrializado. Los fabricantes bean to bar compran cacao directamente a los agricultores, lo tuestan, muelen, conchean y templan en sus propios talleres. Esto permite rastrear el origen exacto de cada tableta y desarrollar perfiles de sabor únicos. Pioneros como Dandelion Chocolate en San Francisco o Marou en Vietnam demostraron que el chocolate podía tener la misma complejidad que el vino de terroir. Un grano de cacao de Madagascar sabe completamente diferente a uno de Venezuela: el primero tiene notas cítricas y frutales, el segundo es más cremoso con notas de nuez.", country: "Internacional", countryFlag: "🌍", image: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=600&q=80", readTime: "5 min", category: "Proceso" },
+      { id: "choco-3", title: "La ciencia del temperado: por qué el chocolate cruje", excerpt: "El temperado es el proceso que da al chocolate su brillo, su crujido y su textura sedosa. La ciencia detrás de la cristalización.", content: "El temperado del chocolate es un proceso de calentamiento y enfriamiento controlado que organiza los cristales de manteca de cacao en su forma más estable (Forma V). Existen seis formas cristalinas posibles, pero solo la Forma V produce un chocolate con brillo, crujido satisfactorio al partirlo y textura que se derrite suavemente en la boca a exactamente 34°C (la temperatura corporal). El proceso clásico implica calentar el chocolate a 50°C para derretir todos los cristales, enfriarlo a 27°C trabajándolo sobre mármol para formar cristales de Forma V, y luego calentarlo ligeramente a 31-32°C para eliminar las formas inestables. Un chocolate mal temperado se ve opaco, tiene manchas blancas y una textura granulosa.", country: "Internacional", countryFlag: "🌍", image: "https://images.unsplash.com/photo-1511381939415-e44015466834?w=600&q=80", readTime: "7 min", category: "Ciencia" },
+      { id: "choco-4", title: "Historia del chocolate: de bebida sagrada maya a dulce mundial", excerpt: "3,000 años de historia: cómo el cacao pasó de ser moneda divina en Mesoamérica a la golosina más popular del planeta.", content: "Los olmecas fueron los primeros en cultivar cacao hace unos 3,000 años. Los mayas lo preparaban como una bebida espumosa condimentada con chile y vainilla llamada xocolatl. Los aztecas lo asociaban con Quetzalcóatl y lo reservaban para la élite. Cuando los españoles llegaron a América, Hernán Cortés llevó el cacao a España donde se le agregó azúcar por primera vez. Durante dos siglos fue un secreto español antes de extenderse por Europa. En 1828 el holandés Coenraad van Houten inventó la prensa de cacao, que separaba la manteca del polvo, revolucionando la industria. En 1847 la empresa británica Fry creó la primera tableta de chocolate sólido comestible tal como la conocemos hoy.", country: "Internacional", countryFlag: "🌍", image: "https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&q=80", readTime: "6 min", category: "Historia" },
+    ],
+    debates: [
+      { id: "d-choco-1", type: "VS", title: "Chocolate negro vs chocolate con leche: ¿cuál es superior?", description: "El debate eterno entre los puristas del cacao y los amantes de la cremosidad.", optionA: "Negro (70%+)", optionB: "Con leche", votesA: 95, votesB: 78, responses: 41, author: "ChocoMDCO", date: "2026-03-19" },
+      { id: "d-choco-2", type: "Recomendacion", title: "Mejores tabletas bean to bar para regalar", description: "Busco recomendaciones de tabletas de chocolate artesanal para un regalo especial.", responses: 22, author: "CacaoFino", date: "2026-03-11" },
+      { id: "d-choco-3", type: "Mitos", title: "¿El chocolate blanco es realmente chocolate?", description: "Técnicamente no contiene sólidos de cacao, pero sí manteca de cacao. ¿Cuenta?", responses: 35, author: "ChocolateVerdad", date: "2026-03-05" },
+    ],
+    encuestas: [
+      { id: "e-choco-1", question: "¿Qué porcentaje de cacao prefieres?", options: [{ text: "50-60% (suave)", votes: 34 }, { text: "70-80% (intenso)", votes: 78 }, { text: "85%+ (puro)", votes: 45 }, { text: "Con leche (<50%)", votes: 56 }], totalVotes: 213, author: "MDCO", date: "2026-03-08" },
+      { id: "e-choco-2", question: "¿De dónde prefieres el cacao?", options: [{ text: "Ecuador", votes: 62 }, { text: "Venezuela", votes: 45 }, { text: "Madagascar", votes: 38 }, { text: "Ghana/Costa de Marfil", votes: 22 }], totalVotes: 167, author: "MDCO", date: "2026-02-22" },
+    ],
+    gallery: [
+      { src: "https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=400&q=80", caption: "Tabletas artesanales", author: "Comunidad MDCO" },
+      { src: "https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=400&q=80", caption: "Granos de cacao", author: "Comunidad MDCO" },
+      { src: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=400&q=80", caption: "Proceso bean to bar", author: "Comunidad MDCO" },
     ],
   },
 };
