@@ -1,8 +1,18 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ChevronDown, BookOpen, MessageSquarePlus, Send } from "lucide-react";
+import { ArrowLeft, ChevronDown, BookOpen, MessageSquarePlus, Send, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { enciclopediaContent } from "@/data/enciclopedia-content";
+
+function toSlug(titulo: string): string {
+  return titulo
+    .toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
 
 interface Subtema {
   titulo: string;
@@ -233,31 +243,47 @@ const Encyclopedia = () => {
                       Explora los temas:
                     </h4>
                     <div className="grid gap-3">
-                      {categoria.subtemas.map((subtema) => (
-                        <div
-                          key={subtema.titulo}
-                          className="group/item p-4 bg-background rounded-xl hover:shadow-md transition-all duration-300 cursor-pointer border border-transparent hover:border-primary/20"
-                        >
-                          <div className="flex items-start gap-3">
-                            <div
-                              className={`w-3 h-3 rounded-full bg-gradient-to-r ${categoria.color} mt-1.5 flex-shrink-0`}
-                            />
-                            <div className="flex-1">
-                              <div className="flex items-center justify-between">
-                                <h5 className="font-semibold text-foreground group-hover/item:text-primary transition-colors">
-                                  {subtema.titulo}
-                                </h5>
-                                <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded-full">
-                                  {subtema.temas} temas
-                                </span>
+                      {categoria.subtemas.map((subtema) => {
+                        const subtemaSlug = toSlug(subtema.titulo);
+                        const hasContent = !!enciclopediaContent[subtemaSlug];
+                        const Wrapper = hasContent ? Link : "div";
+                        const wrapperProps = hasContent ? { to: `/enciclopedia/${subtemaSlug}` } : {};
+
+                        return (
+                          <Wrapper
+                            key={subtema.titulo}
+                            {...(wrapperProps as any)}
+                            className="group/item p-4 bg-background rounded-xl hover:shadow-md transition-all duration-300 cursor-pointer border border-transparent hover:border-primary/20"
+                          >
+                            <div className="flex items-start gap-3">
+                              <div
+                                className={`w-3 h-3 rounded-full bg-gradient-to-r ${categoria.color} mt-1.5 flex-shrink-0`}
+                              />
+                              <div className="flex-1">
+                                <div className="flex items-center justify-between">
+                                  <h5 className="font-semibold text-foreground group-hover/item:text-primary transition-colors">
+                                    {subtema.titulo}
+                                  </h5>
+                                  <div className="flex items-center gap-2">
+                                    {hasContent ? (
+                                      <span className="text-xs font-medium text-green-600 bg-green-100 px-2 py-1 rounded-full flex items-center gap-1">
+                                        Explorar <ArrowRight className="w-3 h-3" />
+                                      </span>
+                                    ) : (
+                                      <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded-full">
+                                        Próximamente
+                                      </span>
+                                    )}
+                                  </div>
+                                </div>
+                                <p className="text-muted-foreground text-sm mt-1">
+                                  {subtema.descripcion}
+                                </p>
                               </div>
-                              <p className="text-muted-foreground text-sm mt-1">
-                                {subtema.descripcion}
-                              </p>
                             </div>
-                          </div>
-                        </div>
-                      ))}
+                          </Wrapper>
+                        );
+                      })}
                     </div>
                   </div>
                 )}
