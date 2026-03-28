@@ -81,6 +81,15 @@ export const enciclopediaContent: Record<string, SubtemaContent> = {
         readTime: "9 min",
         tag: "Exoplanetas",
       },
+      {
+        id: "enc-astro-7",
+        title: "TON 618: el agujero negro más monstruoso del universo conocido",
+        excerpt: "Con 66 mil millones de masas solares, TON 618 es uno de los objetos más masivos jamás descubiertos. Su tamaño desafía la imaginación.",
+        content: "TON 618 no es simplemente un agujero negro grande: es un monstruo cósmico que desafía nuestra capacidad de comprensión. Ubicado a unos 10,400 millones de años luz de la Tierra en la constelación de Canes Venatici (los Perros de Caza), TON 618 alberga un agujero negro ultramasivo con una masa estimada de 66 mil millones de veces la masa del Sol. Para poner esto en perspectiva: si el agujero negro supermasivo del centro de nuestra Vía Láctea, Sagitario A* (4 millones de masas solares), fuera una pelota de tenis, TON 618 sería del tamaño de un estadio de fútbol.\n\nEl horizonte de eventos de TON 618 tiene un diámetro estimado de unos 390 mil millones de kilómetros, es decir, aproximadamente 1,300 veces la distancia de la Tierra al Sol. Si lo colocáramos en el centro de nuestro sistema solar, su horizonte de eventos engulliría las órbitas de todos los planetas, incluyendo la de Plutón y gran parte del Cinturón de Kuiper.\n\nTON 618 fue descubierto originalmente en 1957 durante un sondeo de objetos celestes, pero no fue hasta estudios posteriores que se comprendió su verdadera naturaleza. Es un cuásar hiperluminoso: la materia que cae hacia el agujero negro forma un disco de acreción que brilla con una luminosidad equivalente a 140 billones de soles. Esta luz es tan intensa que podemos detectarla a más de 10 mil millones de años luz de distancia, lo que significa que la estamos viendo como era cuando el universo tenía solo 3,400 millones de años.\n\nLo más fascinante es que TON 618 no es único. Se han descubierto otros agujeros negros ultramasivos como Phoenix A (100 mil millones de masas solares) y Holm 15A* (40 mil millones), sugiriendo que estos titanes son más comunes de lo que pensábamos. ¿Cómo crecieron tanto? Los científicos debaten entre fusiones de agujeros negros, acreción directa de gas, o incluso la posibilidad de que se formaran directamente del colapso de enormes nubes de gas en el universo temprano, sin pasar por la fase de estrella.",
+        image: "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=600&q=80",
+        readTime: "8 min",
+        tag: "Agujeros negros",
+      },
     ],
   },
 };
