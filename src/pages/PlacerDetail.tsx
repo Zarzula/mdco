@@ -183,7 +183,7 @@ const PlacerDetail = () => {
           {activeTab === "debates" && (
             <div className="max-w-3xl mx-auto space-y-4">
               {content.debates.map((debate) => (
-                <div key={debate.id} className={`rounded-2xl p-6 shadow-soft hover:shadow-elevated transition-all duration-300 ${isSpace ? "bg-purple-900/40 border border-purple-500/20" : "bg-card"}`}
+                <div key={debate.id} className={`rounded-2xl p-6 shadow-soft hover:shadow-elevated transition-all duration-300 ${isSpace ? "bg-purple-900/40 border border-purple-500/20" : "bg-card"}`}>
                   <div className="flex items-center gap-3 mb-3">
                     <span className={`text-xs font-bold px-3 py-1 rounded-full ${typeColors[debate.type] || "bg-gray-100 text-gray-700"}`}>
                       {debate.type}
