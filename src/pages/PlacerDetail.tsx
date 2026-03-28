@@ -87,7 +87,7 @@ const PlacerDetail = () => {
               { key: "debates" as TabType, icon: MessageSquare, label: "Debates", count: content.debates.length },
               { key: "encuestas" as TabType, icon: BarChart3, label: "Encuestas", count: content.encuestas.length },
               { key: "galeria" as TabType, icon: Camera, label: "Galería", count: content.gallery.length },
-              ...(slug === "astrologia" ? [{ key: "mapa" as TabType, icon: Map, label: "Mapa Estelar", count: 19 }] : []),
+              ...(slug === "astronomia" ? [{ key: "mapa" as TabType, icon: Map, label: "Mapa Estelar", count: 19 }] : []),
             ]).map((tab) => (
               <button
                 key={tab.key}
@@ -287,7 +287,7 @@ const PlacerDetail = () => {
           )}
 
           {/* ===== TAB: MAPA ESTELAR (solo astrología) ===== */}
-          {activeTab === "mapa" && slug === "astrologia" && (
+          {activeTab === "mapa" && slug === "astronomia" && (
             <div>
               <div className="text-center mb-6">
                 <h3 className="font-display text-2xl font-bold text-foreground mb-2">

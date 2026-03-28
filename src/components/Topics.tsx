@@ -29,9 +29,9 @@ export const placeres = [
     status: "activo",
   },
   {
-    title: "Astronomía Amateur",
+    title: "Astronomía y Astrología",
     slug: "astronomia",
-    description: "Observación del cielo, equipos, astrofotografía y cosmología para apasionados.",
+    description: "Del cosmos a las constelaciones: ciencia estelar, observación del cielo y mapa interactivo del zodiaco.",
     image: placerAstronomia,
     status: "activo",
   },
@@ -40,13 +40,6 @@ export const placeres = [
     slug: "chocolate",
     description: "Del árbol a la barra: bean to bar, orígenes del cacao y el arte del chocolatero.",
     image: placerChocolate,
-    status: "activo",
-  },
-  {
-    title: "Astrología: Mapa del Cielo",
-    slug: "astrologia",
-    description: "Constelaciones, signos zodiacales, mitología estelar y el mapa interactivo del cielo nocturno.",
-    image: "https://images.unsplash.com/photo-1532968961962-8a0cb3a2d4f5?w=600&q=80",
     status: "activo",
   },
   {
@@ -215,7 +208,7 @@ const Topics = () => {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground">
-            <span className="font-semibold text-foreground">6 Placeres activos</span> · más comunidades próximamente
+            <span className="font-semibold text-foreground">5 Placeres activos</span> · más comunidades próximamente
           </p>
         </div>
       </div>
