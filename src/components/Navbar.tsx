@@ -72,6 +72,7 @@ const Navbar = () => {
     }
     register(formName.trim(), formEmail.trim());
     setShowLogin(false);
+    setShowProfile(false);
     setFormName("");
     setFormEmail("");
     setFormPassword("");
@@ -158,8 +159,8 @@ const Navbar = () => {
         </div>
       )}
 
-      {/* Click outside to close profile */}
-      {showProfile && <div className="fixed inset-0 z-40" onClick={() => setShowProfile(false)} />}
+      {/* Click outside to close profile - only covers area below navbar */}
+      {showProfile && <div className="fixed inset-0 top-16 z-40" onClick={() => setShowProfile(false)} />}
 
       {/* Search overlay */}
       {searchOpen && (
