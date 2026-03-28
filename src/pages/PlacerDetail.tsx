@@ -14,6 +14,7 @@ const PlacerDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [activeTab, setActiveTab] = useState<TabType>("articulos");
+  const [showRegisterModal, setShowRegisterModal] = useState(false);
 
   const content = slug ? placeresContent[slug] : null;
   const placerInfo = placeres.find((p) => p.slug === slug);
@@ -210,7 +211,7 @@ const PlacerDetail = () => {
 
                   <div className="flex items-center gap-4 text-sm text-muted-foreground">
                     <span className="flex items-center gap-1"><MessageCircle className="w-4 h-4" /> {debate.responses} respuestas</span>
-                    <span className="flex items-center gap-1"><ThumbsUp className="w-4 h-4" /> Participar</span>
+                    <button onClick={() => setShowRegisterModal(true)} className="flex items-center gap-1 hover:text-primary transition-colors"><ThumbsUp className="w-4 h-4" /> Participar</button>
                   </div>
                 </div>
               ))}
@@ -324,6 +325,33 @@ const PlacerDetail = () => {
       </section>
 
       <Footer />
+
+      {/* Modal de registro */}
+      {showRegisterModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onClick={() => setShowRegisterModal(false)}>
+          <div className="bg-card rounded-3xl max-w-md w-full p-8 shadow-2xl" onClick={(e) => e.stopPropagation()}>
+            <div className="text-center mb-6">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <User className="w-8 h-8 text-primary" />
+              </div>
+              <h2 className="font-display text-2xl font-bold text-foreground mb-2">Únete a la comunidad</h2>
+              <p className="text-muted-foreground text-sm">Regístrate gratis para participar en debates, votar en encuestas y compartir tu conocimiento.</p>
+            </div>
+
+            <div className="space-y-3 mb-6">
+              <input type="text" placeholder="Tu nombre" className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50" />
+              <input type="email" placeholder="Tu email" className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50" />
+            </div>
+
+            <Button variant="hero" size="xl" className="w-full mb-3" onClick={() => setShowRegisterModal(false)}>
+              Registrarme gratis
+            </Button>
+            <button onClick={() => setShowRegisterModal(false)} className="w-full text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
+              Ahora no, seguir explorando
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
