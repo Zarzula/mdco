@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Search, X } from "lucide-react";
+import { Search, X, UserCircle } from "lucide-react";
 import logo from "@/assets/maraton-logo.png";
 import { placeres } from "@/components/Topics";
 import { placeresContent } from "@/data/placeres-content";
@@ -42,6 +42,7 @@ function getAllSearchableItems(): SearchResult[] {
 const Navbar = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
+  const [showLogin, setShowLogin] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const allItems = getAllSearchableItems();
@@ -92,8 +93,9 @@ const Navbar = () => {
             <Search className="w-5 h-5" />
           </button>
 
-          <Button variant="hero" size="default" className="opacity-80 cursor-default hidden sm:flex" disabled>
-            📱 Próximamente
+          <Button variant="hero" size="default" onClick={() => setShowLogin(true)}>
+            <UserCircle className="w-4 h-4" />
+            Ingresar
           </Button>
         </div>
       </div>
@@ -150,6 +152,39 @@ const Navbar = () => {
                 </div>
               )}
             </div>
+          </div>
+        </div>
+      )}
+      {/* Modal de Login/Registro */}
+      {showLogin && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onClick={() => setShowLogin(false)}>
+          <div className="bg-card rounded-3xl max-w-md w-full p-8 shadow-2xl" onClick={(e) => e.stopPropagation()}>
+            <div className="text-center mb-6">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <UserCircle className="w-8 h-8 text-primary" />
+              </div>
+              <h2 className="font-display text-2xl font-bold text-foreground mb-2">Bienvenido a MDCO</h2>
+              <p className="text-muted-foreground text-sm">Regístrate gratis para participar en debates, votar en encuestas y ser parte de la comunidad.</p>
+            </div>
+
+            <div className="space-y-3 mb-6">
+              <input type="text" placeholder="Tu nombre" className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50" />
+              <input type="email" placeholder="Tu email" className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50" />
+              <input type="password" placeholder="Contraseña" className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50" />
+            </div>
+
+            <Button variant="hero" size="xl" className="w-full mb-3" onClick={() => setShowLogin(false)}>
+              Crear cuenta gratis
+            </Button>
+
+            <div className="text-center">
+              <p className="text-xs text-muted-foreground mb-3">¿Ya tienes cuenta?</p>
+              <button className="text-sm text-primary font-medium hover:underline">Iniciar sesión</button>
+            </div>
+
+            <button onClick={() => setShowLogin(false)} className="w-full text-sm text-muted-foreground hover:text-foreground transition-colors py-2 mt-3">
+              Seguir explorando sin cuenta
+            </button>
           </div>
         </div>
       )}
