@@ -20,13 +20,13 @@ const ConstellationMap = () => {
 
   return (
     <div>
-      {/* Visor del cielo en tiempo real */}
+      {/* Visor del cielo interactivo - VirtualSky (open source, disenado para embeber) */}
       <div className="mb-8">
         <div className="flex items-center justify-between mb-3">
           <div>
-            <h3 className="font-display font-bold text-foreground text-lg">Cielo en tiempo real</h3>
+            <h3 className="font-display font-bold text-foreground text-lg">Cielo interactivo</h3>
             <p className="text-sm text-muted-foreground">
-              Powered by <a href="https://stellarium-web.org" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Stellarium Web</a> (open source). Arrastra para explorar, scroll para zoom.
+              Powered by <a href="https://virtualsky.lco.global/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">VirtualSky</a> (open source). Arrastra para explorar el cielo nocturno.
             </p>
           </div>
           <button
@@ -39,8 +39,8 @@ const ConstellationMap = () => {
         </div>
         <div className={`rounded-2xl overflow-hidden border border-border shadow-elevated transition-all duration-500 ${skyExpanded ? "h-[70vh]" : "h-[400px]"}`}>
           <iframe
-            src="https://stellarium-web.org/"
-            title="Stellarium Web - Mapa del cielo en tiempo real"
+            src="https://virtualsky.lco.global/embed/index.html?longitude=-79.9&latitude=-2.2&projection=stereo&constellations=true&constellationlabels=true&showstarlabels=true&gridlines_az=true&ground=true&keyboard=false&language=es&live=true"
+            title="VirtualSky - Mapa del cielo interactivo"
             className="w-full h-full border-0"
             allow="fullscreen"
             loading="lazy"
