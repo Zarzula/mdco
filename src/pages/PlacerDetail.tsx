@@ -87,7 +87,7 @@ const PlacerDetail = () => {
               { key: "debates" as TabType, icon: MessageSquare, label: "Debates", count: content.debates.length },
               { key: "encuestas" as TabType, icon: BarChart3, label: "Encuestas", count: content.encuestas.length },
               { key: "galeria" as TabType, icon: Camera, label: "Galería", count: content.gallery.length },
-              ...(slug === "astrologia" ? [{ key: "mapa" as TabType, icon: Map, label: "Mapa Estelar", count: 15 }] : []),
+              ...(slug === "astrologia" ? [{ key: "mapa" as TabType, icon: Map, label: "Mapa Estelar", count: 19 }] : []),
             ]).map((tab) => (
               <button
                 key={tab.key}

@@ -180,6 +180,17 @@ const ConstellationMap = () => {
                 <p className="text-slate-300 leading-relaxed">{selected.descripcion}</p>
               </div>
 
+              {/* Imagen */}
+              <div className="rounded-xl overflow-hidden">
+                <img src={selected.image} alt={selected.nombre} className="w-full h-48 object-cover" />
+              </div>
+
+              {/* Cómo encontrarla */}
+              <div className="bg-blue-950/50 rounded-xl p-4 border border-blue-800/30">
+                <h3 className="font-display font-semibold text-white mb-2">🧭 Cómo encontrarla</h3>
+                <p className="text-slate-300 text-sm leading-relaxed">{selected.comoEncontrarla}</p>
+              </div>
+
               {/* Mitología */}
               <div>
                 <h3 className="font-display font-semibold text-white mb-2">📜 Mitología</h3>
@@ -202,6 +213,12 @@ const ConstellationMap = () => {
               <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
                 <h3 className="font-display font-semibold text-white mb-1">🔭 Cuándo observarla</h3>
                 <p className="text-slate-300 text-sm">{selected.visibilidad}</p>
+              </div>
+
+              {/* Dato extra */}
+              <div className="bg-amber-950/30 rounded-xl p-4 border border-amber-800/20">
+                <h3 className="font-display font-semibold text-amber-200 mb-1">💡 Dato curioso</h3>
+                <p className="text-slate-300 text-sm">{selected.datoExtra}</p>
               </div>
             </div>
           </div>
