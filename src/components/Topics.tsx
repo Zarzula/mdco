@@ -45,9 +45,9 @@ export const placeres = [
   {
     title: "Destilados y Coctelería",
     slug: "destilados",
-    description: "Whisky, ron, gin, vodka y el arte de la mixología. Cócteles clásicos y modernos.",
+    description: "Whisky, ron, gin, tequila y el arte de la mixología. Cócteles clásicos y modernos.",
     image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=80",
-    status: "proximamente",
+    status: "activo",
   },
   {
     title: "Quesos del Mundo",
@@ -208,7 +208,7 @@ const Topics = () => {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground">
-            <span className="font-semibold text-foreground">5 Placeres activos</span> · más comunidades próximamente
+            <span className="font-semibold text-foreground">6 Placeres activos</span> · más comunidades próximamente
           </p>
         </div>
       </div>
