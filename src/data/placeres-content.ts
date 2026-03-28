@@ -180,6 +180,17 @@ export const placeresContent: Record<string, PlacerContent> = {
         readTime: "5 min",
         category: "Maridaje",
       },
+      {
+        id: "vino-5",
+        title: "Mapa vitivinícola de Argentina: las regiones que producen los mejores vinos",
+        excerpt: "Desde Salta a la Patagonia, Argentina es el quinto productor mundial de vino. Conoce cada región, sus cepas estrella y por qué la altitud lo cambia todo.",
+        content: "Argentina es el quinto productor mundial de vino y el más importante del hemisferio sur junto a Chile y Australia. Su secreto está en la geografía: los viñedos se extienden a lo largo de 2,400 km de norte a sur, al pie de la Cordillera de los Andes, desde los 1,700 metros en Salta hasta los valles patagónicos.\n\nMendoza es el corazón vitivinícola: produce el 70% del vino argentino. Se divide en zonas con personalidades distintas. Luján de Cuyo es la cuna del Malbec clásico con cuerpo y taninos aterciopelados. El Valle de Uco (Tupungato, Tunuyán, San Carlos), entre 1,000 y 1,500 metros de altitud, produce los Malbec más elegantes y frescos del país, con acidez vibrante y notas de violeta. Maipú es la zona histórica, con bodegas centenarias. La región Este es la más productiva en volumen.\n\nSalta, en el noroeste, alberga los viñedos más altos del mundo. En Cafayate (1,750m) y Colomé (2,300m), la variedad estrella es el Torrontés, un blanco aromático exclusivo de Argentina con perfume a rosas y jazmín. La intensa radiación UV a gran altitud produce pieles gruesas que dan vinos intensamente coloreados.\n\nSan Juan, la segunda provincia productora, es conocida por el Syrah y los vinos dulces naturales. La Rioja produce el Torrontés Riojano. Catamarca tiene viñedos a más de 2,000 metros. Neuquén y Río Negro, en la Patagonia, sorprenden con Pinot Noir de clima frío, con elegancia y frescura que recuerdan a Borgoña. La amplitud térmica patagónica (diferencia de 20°C entre día y noche) genera concentración de sabores única.\n\nLas cepas principales de Argentina son: Malbec (tinta insignia), Bonarda (la más plantada), Cabernet Sauvignon, Syrah, Tempranillo, Torrontés (blanca insignia), Chardonnay y Sauvignon Blanc.",
+        country: "Argentina",
+        countryFlag: "🇦🇷",
+        image: "https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=600&q=80",
+        readTime: "8 min",
+        category: "Regiones",
+      },
     ],
     debates: [
       { id: "d-vino-1", type: "VS", title: "Cabernet Sauvignon vs Malbec: ¿cuál es mejor?", description: "La eterna batalla entre estas dos cepas tintas. ¿Cuál prefieres y por qué?", optionA: "Cabernet Sauvignon", optionB: "Malbec", votesA: 89, votesB: 102, responses: 45, author: "SommelierMDCO", date: "2026-03-18" },
