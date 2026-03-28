@@ -1,12 +1,13 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
-import { ArrowLeft, Clock, Globe, BookOpen, Camera, MessageCircle, Lightbulb, MessageSquare, BarChart3, ThumbsUp, User, Map } from "lucide-react";
+import { ArrowLeft, Clock, Globe, BookOpen, Camera, MessageCircle, Lightbulb, MessageSquare, BarChart3, ThumbsUp, User, Map, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { placeresContent, Article } from "@/data/placeres-content";
 import { placeres } from "@/components/Topics";
 import ConstellationMap from "@/components/ConstellationMap";
+import { useAuth } from "@/hooks/use-auth";
 
 type TabType = "articulos" | "debates" | "encuestas" | "galeria" | "mapa";
 
@@ -15,6 +16,8 @@ const PlacerDetail = () => {
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [activeTab, setActiveTab] = useState<TabType>("articulos");
   const [showRegisterModal, setShowRegisterModal] = useState(false);
+  const [participated, setParticipated] = useState<string[]>([]);
+  const { user, isLoggedIn, addPoints, incrementStat } = useAuth();
 
   const content = slug ? placeresContent[slug] : null;
   const placerInfo = placeres.find((p) => p.slug === slug);
@@ -211,13 +214,29 @@ const PlacerDetail = () => {
 
                   <div className="flex items-center gap-4 text-sm text-muted-foreground">
                     <span className="flex items-center gap-1"><MessageCircle className="w-4 h-4" /> {debate.responses} respuestas</span>
-                    <button onClick={() => setShowRegisterModal(true)} className="flex items-center gap-1 hover:text-primary transition-colors"><ThumbsUp className="w-4 h-4" /> Participar</button>
+                    {participated.includes(debate.id) ? (
+                      <span className="flex items-center gap-1 text-green-600"><CheckCircle className="w-4 h-4" /> Participaste (+15 pts)</span>
+                    ) : (
+                      <button onClick={() => {
+                        if (!isLoggedIn) { setShowRegisterModal(true); return; }
+                        addPoints(15);
+                        incrementStat("debatesParticipados");
+                        setParticipated([...participated, debate.id]);
+                      }} className="flex items-center gap-1 hover:text-primary transition-colors font-medium">
+                        <ThumbsUp className="w-4 h-4" /> Participar
+                      </button>
+                    )}
                   </div>
                 </div>
               ))}
 
               <div className="bg-muted/50 rounded-xl p-6 text-center">
-                <p className="text-muted-foreground text-sm font-medium">Puedes leer todos los debates libremente. Regístrate gratis para participar y dar tu opinión.</p>
+                <p className="text-muted-foreground text-sm font-medium">
+                  {isLoggedIn
+                    ? `¡Hola ${user?.name}! Haz clic en "Participar" para ganar +15 puntos por cada debate.`
+                    : "Puedes leer todos los debates libremente. Regístrate gratis para participar y ganar puntos."
+                  }
+                </p>
               </div>
             </div>
           )}
