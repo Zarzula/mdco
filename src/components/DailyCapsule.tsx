@@ -31,11 +31,11 @@ const DailyCapsule = () => {
   const capsule = getDailyCapsule();
 
   return (
-    <section className="py-8 bg-background">
+    <section className="py-8 bg-[#0a0e1a]">
       <div className="container mx-auto px-6">
         <Link
           to={`/placer/${capsule.slug}`}
-          className="group block relative overflow-hidden rounded-3xl bg-gradient-to-r from-primary/10 via-accent/5 to-primary/5 border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg"
+          className="group block relative overflow-hidden rounded-3xl bg-white/[0.03] border border-cyan-500/15 hover:border-cyan-400/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,240,255,0.1)] backdrop-blur-sm"
         >
           <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-8">
             {/* Imagen */}
@@ -50,23 +50,23 @@ const DailyCapsule = () => {
             {/* Contenido */}
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
-                <Lightbulb className="w-5 h-5 text-primary" />
-                <span className="text-xs font-semibold text-primary uppercase tracking-wider">
+                <Lightbulb className="w-5 h-5 text-cyan-400" />
+                <span className="text-xs font-semibold text-cyan-400 uppercase tracking-wider">
                   Cápsula del día
                 </span>
-                <span className="text-xs text-muted-foreground">· {capsule.category}</span>
+                <span className="text-xs text-slate-500">· {capsule.category}</span>
               </div>
-              <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+              <h3 className="font-display text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
                 {capsule.title}
               </h3>
-              <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+              <p className="text-slate-400 text-sm md:text-base leading-relaxed">
                 {capsule.content}
               </p>
             </div>
 
             {/* Flecha */}
             <div className="flex-shrink-0 hidden md:block">
-              <ArrowRight className="w-6 h-6 text-primary/50 group-hover:text-primary group-hover:translate-x-1 transition-all" />
+              <ArrowRight className="w-6 h-6 text-cyan-500/50 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
             </div>
           </div>
         </Link>

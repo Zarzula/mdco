@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import DailyWords from "@/components/DailyWords";
 import DailyCapsule from "@/components/DailyCapsule";
 import FestiveBanner from "@/components/FestiveBanner";
+import RadialMenu from "@/components/RadialMenu";
 
 const Index = () => {
   const { hash } = useLocation();
@@ -26,7 +27,7 @@ const Index = () => {
   }, [hash]);
 
   return (
-    <div className="min-h-screen bg-background font-body">
+    <div className="min-h-screen font-body">
       <FestiveBanner />
       <Navbar />
       <Hero />
@@ -37,6 +38,7 @@ const Index = () => {
       <Pricing />
       <Footer />
       <DailyWords />
+      <RadialMenu />
     </div>
   );
 };
