@@ -407,6 +407,17 @@ export const placeresContent: Record<string, PlacerContent> = {
         readTime: "7 min",
         category: "Tequila y Mezcal",
       },
+      {
+        id: "dest-5",
+        title: "Cómo tomar whisky correctamente: guía paso a paso",
+        excerpt: "Desde elegir la copa hasta añadir agua: los 6 pasos que transformarán tu experiencia con el whisky para siempre.",
+        content: "Tomar whisky es un ritual que, bien ejecutado, revela un universo de sabores. Aquí van los 6 pasos para hacerlo como un profesional.\n\nPASO 1: ELIGE LA COPA CORRECTA. La copa Glencairn (forma de tulipán) es el estándar profesional: su base ancha permite agitar sin derramar y su boca estrecha concentra los aromas hacia la nariz. Si no tienes una, un vaso de vino pequeño funciona. Evita los vasos anchos tipo 'old fashioned' para cata seria, ya que dispersan los aromas.\n\nPASO 2: SIRVE Y OBSERVA. Sirve unos 30-40 ml (dos dedos). Inclina la copa contra la luz y observa el color: un whisky dorado claro sugiere envejecimiento en barrica de bourbon; un tono ámbar oscuro o rojizo indica barrica de jerez. Gira la copa y observa las 'lágrimas' o 'piernas' que bajan por el cristal: cuanto más lentas y gruesas, mayor contenido alcohólico y cuerpo.\n\nPASO 3: PRIMERA NARIZ (SIN AGITAR). Acerca la copa a la nariz sin meter la nariz dentro del vaso. Mantén la boca ligeramente abierta. No inhales profundo la primera vez o el alcohol te adormecerá el olfato. Busca las primeras impresiones: frutal, floral, ahumado, especiado, dulce.\n\nPASO 4: SEGUNDA NARIZ (AGITANDO). Gira suavemente la copa para oxigenar el whisky. Ahora acércala de nuevo: notarás aromas más complejos que antes estaban ocultos. Un buen whisky puede revelar 3-4 capas de aromas diferentes. Tómate tu tiempo.\n\nPASO 5: EL PRIMER SORBO. Toma un sorbo pequeño y distribúyelo por toda la boca. No lo tragues inmediatamente. Deja que cubra la lengua, el paladar y las encías. El primer sorbo siempre será intenso por el alcohol. Nota la textura (sedosa, oleosa, ligera), el dulzor, la acidez y los sabores: vainilla, caramelo, frutas, humo, especias, chocolate.\n\nPASO 6: AÑADE AGUA (OPCIONAL PERO RECOMENDADO). Añade 3-5 gotas de agua a temperatura ambiente con un gotero o pajita. El agua rompe las moléculas de etanol que encapsulan los compuestos aromáticos, liberando sabores que estaban escondidos. Un whisky de 46% puede transformarse completamente con unas gotas. Vuelve a oler y probar: muchos profesionales dicen que el verdadero carácter del whisky aparece con agua.\n\nCONSEJO EXTRA: Si prefieres hielo, usa un cubo grande (5cm) o una esfera. Los cubos pequeños se derriten rápido y diluyen demasiado. El hielo enfría y suaviza, pero también adormece algunos sabores. No hay forma incorrecta de tomar whisky: lo importante es disfrutarlo.",
+        country: "Internacional",
+        countryFlag: "🌍",
+        image: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
+        readTime: "8 min",
+        category: "Guía de cata",
+      },
     ],
     debates: [
       { id: "d-dest-1", type: "VS", title: "Whisky escocés vs Bourbon americano: ¿cuál prefieres?", description: "Dos filosofías del whisky enfrentadas: la tradición escocesa vs la potencia americana.", optionA: "Scotch", optionB: "Bourbon", votesA: 78, votesB: 92, responses: 42, author: "WhiskyMDCO", date: "2026-03-20" },
