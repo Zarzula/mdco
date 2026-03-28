@@ -191,6 +191,17 @@ export const placeresContent: Record<string, PlacerContent> = {
         readTime: "8 min",
         category: "Regiones",
       },
+      {
+        id: "vino-6",
+        title: "Valle de Uco: la joya de la viticultura de altitud en Mendoza",
+        excerpt: "Gualtallary, Los Chacayes, El Peral y Pedernal: los terroirs que están produciendo los vinos más premiados de Argentina.",
+        content: "El Valle de Uco se ha convertido en la zona más prestigiosa de la vitivinicultura argentina. Ubicado al pie del volcán Tupungato (6,570m) en el suroeste de Mendoza, sus viñedos se extienden entre los 900 y 1,500 metros de altitud. La combinación de suelos aluviales con piedra caliza, una amplitud térmica de hasta 25°C entre el día y la noche, y la pureza del agua de deshielo andino crean condiciones extraordinarias.\n\nGualtallary, en el distrito de Tupungato, es considerado el gran cru argentino. Sus suelos calcáreos a 1,300-1,500 metros de altitud producen Malbec con una mineralidad y frescura que recuerda más a un vino europeo que a uno del Nuevo Mundo. Los vinos de Gualtallary tienen taninos finos, acidez vibrante y una elegancia que los ha puesto en la mira de los críticos internacionales.\n\nLos Chacayes, en Tunuyán, destaca por sus suelos de origen aluvial con cantos rodados. La piedra en el suelo drena rápidamente el agua, estresando las vides de forma controlada y produciendo uvas pequeñas y concentradas. El resultado son Malbec de gran estructura, con notas de fruta negra madura, grafito y especias.\n\nEl Peral ofrece paisajes de viñedos con la Cordillera de fondo, con suelos arenosos y arcillosos que dan vinos con cuerpo medio y gran expresión aromática. Pedernal, en San Carlos, es la zona más al sur del Valle de Uco, con altitudes que superan los 1,400 metros y un clima más fresco que produce blancos excepcionales y tintos de extraordinaria frescura.\n\nLa revolución del Valle de Uco ha cambiado el paradigma del vino argentino: de ser conocido solo por Malbec potentes y frutados, ahora Argentina produce vinos de terroir con identidad propia, capaces de envejecer décadas y competir con los mejores del mundo.",
+        country: "Argentina",
+        countryFlag: "🇦🇷",
+        image: "https://images.unsplash.com/photo-1560493676-04071c5f467b?w=600&q=80",
+        readTime: "9 min",
+        category: "Terroir",
+      },
     ],
     debates: [
       { id: "d-vino-1", type: "VS", title: "Cabernet Sauvignon vs Malbec: ¿cuál es mejor?", description: "La eterna batalla entre estas dos cepas tintas. ¿Cuál prefieres y por qué?", optionA: "Cabernet Sauvignon", optionB: "Malbec", votesA: 89, votesB: 102, responses: 45, author: "SommelierMDCO", date: "2026-03-18" },
