@@ -43,6 +43,13 @@ export const placeres = [
     status: "activo",
   },
   {
+    title: "Astrología: Mapa del Cielo",
+    slug: "astrologia",
+    description: "Constelaciones, signos zodiacales, mitología estelar y el mapa interactivo del cielo nocturno.",
+    image: "https://images.unsplash.com/photo-1532968961962-8a0cb3a2d4f5?w=600&q=80",
+    status: "activo",
+  },
+  {
     title: "Destilados y Coctelería",
     slug: "destilados",
     description: "Whisky, ron, gin, vodka y el arte de la mixología. Cócteles clásicos y modernos.",
@@ -208,7 +215,7 @@ const Topics = () => {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground">
-            <span className="font-semibold text-foreground">5 Placeres activos</span> · más comunidades próximamente
+            <span className="font-semibold text-foreground">6 Placeres activos</span> · más comunidades próximamente
           </p>
         </div>
       </div>

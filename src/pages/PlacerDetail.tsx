@@ -1,13 +1,14 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
-import { ArrowLeft, Clock, Globe, BookOpen, Camera, MessageCircle, Lightbulb, MessageSquare, BarChart3, ThumbsUp, User } from "lucide-react";
+import { ArrowLeft, Clock, Globe, BookOpen, Camera, MessageCircle, Lightbulb, MessageSquare, BarChart3, ThumbsUp, User, Map } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { placeresContent, Article } from "@/data/placeres-content";
 import { placeres } from "@/components/Topics";
+import ConstellationMap from "@/components/ConstellationMap";
 
-type TabType = "articulos" | "debates" | "encuestas" | "galeria";
+type TabType = "articulos" | "debates" | "encuestas" | "galeria" | "mapa";
 
 const PlacerDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -86,6 +87,7 @@ const PlacerDetail = () => {
               { key: "debates" as TabType, icon: MessageSquare, label: "Debates", count: content.debates.length },
               { key: "encuestas" as TabType, icon: BarChart3, label: "Encuestas", count: content.encuestas.length },
               { key: "galeria" as TabType, icon: Camera, label: "Galería", count: content.gallery.length },
+              ...(slug === "astrologia" ? [{ key: "mapa" as TabType, icon: Map, label: "Mapa Estelar", count: 15 }] : []),
             ]).map((tab) => (
               <button
                 key={tab.key}
@@ -281,6 +283,21 @@ const PlacerDetail = () => {
                 <Camera className="w-8 h-8 text-primary/50" />
                 <p className="text-sm text-muted-foreground text-center px-4">Subida de fotos próximamente</p>
               </div>
+            </div>
+          )}
+
+          {/* ===== TAB: MAPA ESTELAR (solo astrología) ===== */}
+          {activeTab === "mapa" && slug === "astrologia" && (
+            <div>
+              <div className="text-center mb-6">
+                <h3 className="font-display text-2xl font-bold text-foreground mb-2">
+                  Mapa Interactivo de Constelaciones
+                </h3>
+                <p className="text-muted-foreground">
+                  Haz clic en cualquier constelación para conocer su historia, mitología y cómo encontrarla en el cielo.
+                </p>
+              </div>
+              <ConstellationMap />
             </div>
           )}
         </div>
