@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ChevronDown, BookOpen, MessageSquarePlus, Send, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { enciclopediaContent } from "@/data/enciclopedia-content";
