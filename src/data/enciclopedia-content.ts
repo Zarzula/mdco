@@ -92,4 +92,42 @@ export const enciclopediaContent: Record<string, SubtemaContent> = {
       },
     ],
   },
+
+  "historia": {
+    slug: "historia",
+    titulo: "Historia",
+    categoriaSlug: "humanidades",
+    categoriaNombre: "Humanidades",
+    descripcion: "Civilizaciones antiguas, imperios, revoluciones y los eventos que moldearon el mundo. Desde Mesopotamia hasta la era moderna.",
+    heroImage: "https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=1200&q=80",
+    articles: [
+      {
+        id: "enc-hist-1",
+        title: "Mesopotamia: la cuna de la civilización entre dos ríos",
+        excerpt: "Sumerios, acadios, babilonios y asirios: las culturas que inventaron la escritura, las leyes y las primeras ciudades de la historia.",
+        content: "Mesopotamia, la tierra entre los ríos Tigris y Éufrates (actual Iraq), es considerada la cuna de la civilización. Aquí nacieron las primeras ciudades, la escritura, las leyes codificadas y la astronomía organizada.\n\nLos sumerios fueron los pioneros. Hacia el 3700 a.C. fundaron las primeras ciudades-estado independientes: Ur, Uruk, Lagash y Eridú. Cada ciudad estaba gobernada por un patesi (rey-sacerdote) que controlaba la defensa, la distribución del agua, la economía y la justicia. Inventaron la escritura cuneiforme: marcas en forma de cuña sobre tablillas de arcilla que registraban cosechas, impuestos y leyes.\n\nLos acadios, bajo el rey Sargón I (hacia 2300 a.C.), crearon el primer imperio de la historia al unificar las ciudades sumerias. Los babilonios alcanzaron su apogeo con Hammurabi (1728-1686 a.C.), quien creó el famoso Código de Hammurabi: 282 leyes y decretos grabados en una estela de piedra que establecieron justicia estandarizada por primera vez. El principio de 'ojo por ojo, diente por diente' viene de aquí.\n\nLos asirios, conocidos por su poderío militar, expandieron el imperio desde el 1530 a.C. con ejércitos profesionales y técnicas de asedio avanzadas. Finalmente, los persas conquistaron Mesopotamia en el 539 a.C.\n\nLa sociedad mesopotámica era jerárquica: rey, nobles, ciudadanos libres (comerciantes, artesanos, agricultores) y esclavos. Su economía se basaba en la agricultura irrigada, el comercio por trueque y la artesanía. El Poema de Gilgamesh, considerado la primera obra literaria de la humanidad, incluye relatos de la creación y un diluvio universal que precede al bíblico.",
+        image: "https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=600&q=80",
+        readTime: "10 min",
+        tag: "Civilizaciones antiguas",
+      },
+      {
+        id: "enc-hist-2",
+        title: "Antiguo Egipto: 3,000 años de civilización a orillas del Nilo",
+        excerpt: "Faraones, pirámides, momificación y una cultura que duró más que cualquier otra en la historia humana.",
+        content: "La civilización egipcia se desarrolló a lo largo del río Nilo, cuyas crecidas anuales (junio-septiembre) depositaban limo fértil que permitía cultivar cereales, legumbres, lino y frutas. Esta abundancia agrícola sostuvo una de las civilizaciones más duraderas de la historia.\n\nEl rey Menes (o Narmer) unificó el Alto y Bajo Egipto hacia el 3000 a.C., estableciendo la capital en Menfis. La historia egipcia se divide en tres grandes períodos: el Imperio Antiguo (desde 2700 a.C., época de las grandes pirámides), el Imperio Medio (desde 2050 a.C., reunificación bajo Mentuhotep II) y el Imperio Nuevo (1600-31 a.C., máximo esplendor con Ramsés II y Hatshepsut).\n\nEl faraón era mucho más que un rey: era considerado descendiente del dios Osiris en la Tierra, autoridad absoluta, comandante militar y figura religiosa suprema. La administración incluía visires, gobernadores provinciales y una red de escribas que dominaban la escritura jeroglífica.\n\nLa sociedad se organizaba en capas: faraón, sacerdotes y nobles (propietarios de tierras), funcionarios y escribas, militares, comerciantes y artesanos, campesinos (la mayor parte de la población, que alquilaba tierras del Estado) y esclavos.\n\nLa religión era politeísta con dioses como Ra (sol), Amón (Tebas), Osiris (muerte y resurrección), Isis (fertilidad) y Horus (guerra). Creían firmemente en la vida después de la muerte, lo que llevó al desarrollo de la momificación para preservar el cuerpo. El Juicio de Osiris determinaba si el alma era digna de la vida eterna.\n\nSu arquitectura monumental evolucionó de las mastabas a las pirámides escalonadas y finalmente a las pirámides geométricas perfectas. Las tumbas del Imperio Nuevo (hipogeos) se excavaban en la roca con laberintos interiores para proteger los tesoros funerarios.",
+        image: "https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=600&q=80",
+        readTime: "11 min",
+        tag: "Civilizaciones antiguas",
+      },
+      {
+        id: "enc-hist-3",
+        title: "Las civilizaciones del Indo y China: los imperios olvidados de Oriente",
+        excerpt: "Mohenjo-Daro con su urbanismo avanzado y la dinastía Shang con sus oráculos de hueso: las civilizaciones que florecieron en Asia.",
+        content: "Mientras Mesopotamia y Egipto dominan los libros de historia occidentales, dos grandes civilizaciones florecían simultáneamente en Asia.\n\nLa civilización del Valle del Indo (3300-1300 a.C.) se desarrolló en los actuales Pakistán e India. Sus ciudades, Mohenjo-Daro y Harappa, muestran un urbanismo sorprendentemente avanzado: calles en cuadrícula perfecta, sistemas de alcantarillado, baños públicos y graneros comunitarios. Tenían un sistema de escritura que aún no ha sido descifrado, pesos y medidas estandarizados, y una sociedad aparentemente más igualitaria que sus contemporáneas (no se han encontrado palacios ni templos monumentales). Su declive sigue siendo un misterio: posiblemente cambios climáticos o el desvío del río Sarasvati.\n\nLa civilización china antigua surgió a orillas del Río Amarillo (Huang He). La dinastía Shang (1600-1046 a.C.) es la primera con evidencia arqueológica sólida. Desarrollaron la escritura china sobre huesos de oráculo (omóplatos de buey y caparazones de tortuga calentados para predecir el futuro), la metalurgia del bronce a niveles de maestría artística, y un sistema de gobierno centralizado con una clase noble guerrera.\n\nEstas cuatro civilizaciones fluviales comparten rasgos fundamentales: surgieron alrededor del 4000 a.C. en valles fértiles de ríos, desarrollaron agricultura excedentaria que permitió el crecimiento urbano, crearon sistemas de escritura, construyeron arquitectura monumental religiosa, organizaron redes comerciales y establecieron sistemas legales y administrativos complejos.",
+        image: "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=600&q=80",
+        readTime: "9 min",
+        tag: "Civilizaciones antiguas",
+      },
+    ],
+  },
 };
