@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X, Star, Flame, Droplets, Wind, Mountain } from "lucide-react";
+import { X, Star, Flame, Droplets, Wind, Mountain, Maximize2, Minimize2 } from "lucide-react";
 import { constelaciones, Constelacion } from "@/data/constelaciones-data";
 
 const elementIcons: Record<string, JSX.Element> = {
@@ -12,6 +12,7 @@ const elementIcons: Record<string, JSX.Element> = {
 const ConstellationMap = () => {
   const [selected, setSelected] = useState<Constelacion | null>(null);
   const [filter, setFilter] = useState<"todos" | "zodiaco" | "notable">("todos");
+  const [skyExpanded, setSkyExpanded] = useState(false);
 
   const filtered = constelaciones.filter(
     (c) => filter === "todos" || c.tipo === filter
@@ -19,6 +20,36 @@ const ConstellationMap = () => {
 
   return (
     <div>
+      {/* Visor del cielo en tiempo real */}
+      <div className="mb-8">
+        <div className="flex items-center justify-between mb-3">
+          <div>
+            <h3 className="font-display font-bold text-foreground text-lg">Cielo en tiempo real</h3>
+            <p className="text-sm text-muted-foreground">
+              Powered by <a href="https://stellarium-web.org" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Stellarium Web</a> (open source). Arrastra para explorar, scroll para zoom.
+            </p>
+          </div>
+          <button
+            onClick={() => setSkyExpanded(!skyExpanded)}
+            className="flex items-center gap-2 px-3 py-1.5 bg-muted rounded-lg text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            {skyExpanded ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
+            {skyExpanded ? "Reducir" : "Ampliar"}
+          </button>
+        </div>
+        <div className={`rounded-2xl overflow-hidden border border-border shadow-elevated transition-all duration-500 ${skyExpanded ? "h-[70vh]" : "h-[400px]"}`}>
+          <iframe
+            src="https://stellarium-web.org/"
+            title="Stellarium Web - Mapa del cielo en tiempo real"
+            className="w-full h-full border-0"
+            allow="fullscreen"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <h3 className="font-display font-bold text-foreground text-lg mb-4">Guía de Constelaciones</h3>
+
       {/* Filtros */}
       <div className="flex gap-2 mb-6">
         {([
