@@ -43,15 +43,24 @@ const PlacerDetail = () => {
     Recomendacion: "bg-green-100 text-green-700",
   };
 
+  const isSpace = slug === "astronomia";
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className={`min-h-screen ${isSpace ? "bg-[#2d2154] text-white" : "bg-background"}`}>
       <Navbar />
 
       {/* Hero del Placer */}
       <section className="relative pt-16">
-        <div className="relative h-[50vh] min-h-[400px] overflow-hidden">
+        <div className={`relative h-[50vh] min-h-[400px] overflow-hidden ${isSpace ? "" : ""}`}>
           <img src={content.heroImage} alt={content.title} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/40 to-foreground/10" />
+          <div className={`absolute inset-0 ${isSpace ? "bg-gradient-to-t from-[#2d2154] via-[#2d2154]/60 to-purple-900/30" : "bg-gradient-to-t from-foreground/90 via-foreground/40 to-foreground/10"}`} />
+          {isSpace && (
+            <>
+              <div className="absolute top-24 right-10 w-20 h-20 bg-purple-400/20 rounded-full blur-2xl animate-float" />
+              <div className="absolute top-40 left-20 w-12 h-12 bg-blue-400/15 rounded-full blur-xl" />
+              <div className="absolute bottom-32 right-1/4 w-16 h-16 bg-violet-300/10 rounded-full blur-2xl" />
+            </>
+          )}
           <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
             <div className="container mx-auto">
               <Link to="/#placeres" className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-4 transition-colors">
@@ -65,25 +74,25 @@ const PlacerDetail = () => {
       </section>
 
       {/* Introducción + Dato curioso */}
-      <section className="py-12 bg-background">
+      <section className={`py-12 ${isSpace ? "bg-[#2d2154]" : "bg-background"}`}>
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="md:col-span-2">
-              <p className="text-lg text-muted-foreground leading-relaxed">{content.intro}</p>
+              <p className={`text-lg leading-relaxed ${isSpace ? "text-purple-200" : "text-muted-foreground"}`}>{content.intro}</p>
             </div>
-            <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6">
+            <div className={`rounded-2xl p-6 ${isSpace ? "bg-purple-500/15 border border-purple-400/30" : "bg-primary/5 border border-primary/20"}`}>
               <div className="flex items-center gap-2 mb-3">
                 <Lightbulb className="w-5 h-5 text-primary" />
                 <h3 className="font-display font-semibold text-foreground">¿Sabías que...?</h3>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">{content.curiosity}</p>
+              <p className={`text-sm leading-relaxed ${isSpace ? "text-purple-200" : "text-muted-foreground"}`}>{content.curiosity}</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* 4 Tabs: Artículos / Debates / Encuestas / Galería */}
-      <section className="py-8 bg-muted/30">
+      <section className={`py-8 ${isSpace ? "bg-[#251d47]" : "bg-muted/30"}`}>
         <div className="container mx-auto px-6">
           <div className="flex gap-2 md:gap-4 mb-8 border-b border-border overflow-x-auto">
             {([
@@ -115,7 +124,7 @@ const PlacerDetail = () => {
                 <article
                   key={article.id}
                   onClick={() => setSelectedArticle(article)}
-                  className="group bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-elevated transition-all duration-300 cursor-pointer"
+                  className={`group rounded-2xl overflow-hidden shadow-soft hover:shadow-elevated transition-all duration-300 cursor-pointer ${isSpace ? "bg-purple-900/40 border border-purple-500/20 hover:border-purple-400/40" : "bg-card"}`}
                 >
                   <div className="aspect-[16/9] overflow-hidden">
                     <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -174,7 +183,7 @@ const PlacerDetail = () => {
           {activeTab === "debates" && (
             <div className="max-w-3xl mx-auto space-y-4">
               {content.debates.map((debate) => (
-                <div key={debate.id} className="bg-card rounded-2xl p-6 shadow-soft hover:shadow-elevated transition-all duration-300">
+                <div key={debate.id} className={`rounded-2xl p-6 shadow-soft hover:shadow-elevated transition-all duration-300 ${isSpace ? "bg-purple-900/40 border border-purple-500/20" : "bg-card"}`}
                   <div className="flex items-center gap-3 mb-3">
                     <span className={`text-xs font-bold px-3 py-1 rounded-full ${typeColors[debate.type] || "bg-gray-100 text-gray-700"}`}>
                       {debate.type}
@@ -324,7 +333,7 @@ const PlacerDetail = () => {
       </section>
 
       {/* Otros Placeres */}
-      <section className="py-16 bg-background">
+      <section className={`py-16 ${isSpace ? "bg-[#2d2154]" : "bg-background"}`}>
         <div className="container mx-auto px-6">
           <h2 className="font-display text-2xl font-bold text-foreground mb-8 text-center">Explora otros Placeres</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
